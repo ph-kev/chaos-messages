@@ -117,6 +117,7 @@ plot!(decrypted_message,tspan...,label="Decrypted")
 combined_plot = plot(sound_plot, error_plot)
 
 display(combined_plot)
+savefig("combined_error_sound_plot.pdf")
 end
 
 main()
