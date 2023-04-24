@@ -1,0 +1,19 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'projectPaper.blg'
+[198] biber-MSWIN64:340> INFO - === 
+[259] Biber.pm:418> INFO - Reading 'projectPaper.bcf'
+[444] Biber.pm:972> INFO - Found 1 citekeys in bib section 0
+[488] Biber.pm:4383> INFO - Processing section 0
+[517] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[641] bibtex.pm:1713> INFO - LaTeX decoding ...
+[658] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[722] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[723] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[723] Biber.pm:4203> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[723] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[731] bbl.pm:654> INFO - Writing 'projectPaper.bbl' with encoding 'UTF-8'
+[733] bbl.pm:757> INFO - Output to projectPaper.bbl
+[733] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'cuomo1993' is not an integer - this will probably not sort properly.
+[733] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\phank\AppData\Local\Temp\biber_tmp_gdrN\33e59b5ca9ec342068223d604c3f8d55_6608.utf8, line 16, warning: 19 characters of junk seen at toplevel
+[733] Biber.pm:130> WARN - BibTeX subsystem: C:\Users\phank\AppData\Local\Temp\biber_tmp_gdrN\33e59b5ca9ec342068223d604c3f8d55_6608.utf8, line 30, warning: 25 characters of junk seen at toplevel
+[733] Biber.pm:132> INFO - WARNINGS: 3
