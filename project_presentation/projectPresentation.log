@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.17)  26 APR 2023 10:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.17)  26 APR 2023 12:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -829,13 +829,19 @@ Package pdftex.def Info: combined_plot.png  used on input line 68.
 
  <./combined_plot.png>] [5
 
+] [6
+
+] [7
+
+] [8
+
 ]
-<combined_error_sound_plot.png, id=159, 5420.25pt x 3613.5pt>
+<combined_error_sound_plot.png, id=238, 5420.25pt x 3613.5pt>
 File: combined_error_sound_plot.png Graphic file (type png)
 <use combined_error_sound_plot.png>
 Package pdftex.def Info: combined_error_sound_plot.png  used on input line 85.
 (pdftex.def)             Requested size: 307.25371pt x 204.8358pt.
- [6
+ [9
 
  <./combined_error_sound_plot.png>]
 \tf@nav=\write6
@@ -852,17 +858,17 @@ Package rerunfilecheck Info: File `projectPresentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25037 strings out of 478584
- 510958 string characters out of 2844401
+ 25044 strings out of 478584
+ 511024 string characters out of 2844401
  752213 words of memory out of 3000000
- 42688 multiletter control sequences out of 15000+600000
+ 42689 multiletter control sequences out of 15000+600000
  476009 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,525b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,15n,122p,525b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on projectPresentation.pdf (6 pages, 1091934 bytes).
+Output written on projectPresentation.pdf (9 pages, 1111096 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
+ 304 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
  64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

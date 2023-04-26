@@ -56,7 +56,7 @@ Chaotic Systems}
          \bigskip
         \begin{itemize}
             \item Based on the Lorenz system. 
-            \item The ``error'' decreases exponentially. 
+            \item The error $E = |x_T - x_R|$ decreases exponentially. 
         \end{itemize}
 \end{frame}
 
@@ -69,10 +69,10 @@ Chaotic Systems}
 
 
 \begin{frame}{Algorithm to Send Secret Message}
-    \begin{enumerate}
+    \begin{enumerate}[<+->]
         \item Create encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where $||m(t)|| \ll ||x_T(t)||$. 
         \item Send $\widetilde{m}(t)$ to the receiver. 
-        \item Use the receiver's dynamical system which hopefully reproduce $x_R(t) \approx x_T(t)$. 
+        \item Use the receiver's dynamical system to hopefully reproduce $x_R(t) \approx x_T(t)$. 
         \item Compute $\widetilde{m}(t) - x_R(t) \approx x_T (t) + m(t) - x_T(t) = m(t)$. 
     \end{enumerate}
 \end{frame}
