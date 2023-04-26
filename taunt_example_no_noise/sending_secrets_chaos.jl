@@ -113,11 +113,11 @@ end
 
 # Plot unencrypted message and encrypted message 
 sound_plot = plot(function_set_up(message_unencrypted),tspan...,label="Original", xlabel=L"t", ylabel="Amplitude")
-plot!(decrypted_message,tspan...,label="Decrypted")
-combined_plot = plot(sound_plot, error_plot)
+plot!(decrypted_message,tspan...,label="Recovered")
+combined_plot = plot(sound_plot, error_plot, dpi = 900)
 
 display(combined_plot)
-savefig("combined_error_sound_plot.pdf")
+savefig("combined_error_sound_plot.png")
 end
 
 main()

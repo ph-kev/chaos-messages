@@ -50,9 +50,9 @@ abs_error = error_set_up(x_at_time_t_transmitter, x_at_time_t_receiver)
 error_plot = plot(abs_error, tspan..., legend = false, xlabel=L"t", ylabel=L"E(t)",linecolor="red")
 display(error_plot)
 
-x_coord_plot = plot(x_at_time_t_transmitter, tspan...,label="transmitter",xlabel=L"t",ylabel=L"x(t)")
+x_coord_plot = plot(x_at_time_t_transmitter, tspan...,label="Transmitter",xlabel=L"t",ylabel=L"x(t)")
 plot!(x_at_time_t_receiver, tspan...,label="Receiver")
 
-combined_plot = plot(x_coord_plot, error_plot)
+combined_plot = plot(x_coord_plot, error_plot, dpi=600)
 display(combined_plot)
-savefig("combined_plot.pdf")
+savefig("combined_plot.png")
