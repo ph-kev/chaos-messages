@@ -21,13 +21,12 @@ Chaotic Systems}
 
 \begin{frame}{Problem}
     \begin{figure}[H]
-        \includegraphics[width=7cm]{drawing.png}
+        \includegraphics[width=8cm]{drawing.png}
         \centering
     \end{figure}
     \begin{itemize}
         \item Transmitter want to send a message $m(t)$ to Receiver. 
-        \item Don't want anyone, but the receiver to read the message.
-        \item Goal: Encrypt the message.  
+        \item Don't want anyone, but the receiver to be able to read the message.
     \end{itemize}
 \end{frame}
 
@@ -71,10 +70,10 @@ Chaotic Systems}
 
 \begin{frame}{Algorithm to Send Secret Message}
     \begin{enumerate}
-        \item Create encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where $||m(t)|| \ll ||x_T||$. 
+        \item Create encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where $||m(t)|| \ll ||x_T(t)||$. 
         \item Send $\widetilde{m}(t)$ to the receiver. 
         \item Use the receiver's dynamical system which hopefully reproduce $x_R(t) \approx x_T(t)$. 
-        \item Compute $\widetilde{m}(t) - x_R \approx x_T (t) + m(t) - x_T(t) = m(t)$. 
+        \item Compute $\widetilde{m}(t) - x_R(t) \approx x_T (t) + m(t) - x_T(t) = m(t)$. 
     \end{enumerate}
 \end{frame}
 
