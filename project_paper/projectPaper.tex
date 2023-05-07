@@ -37,7 +37,7 @@ sorting=ynt
     \maketitle
 
     \begin{abstract}
-      This paper introduces the basics of synchronization of chaotic systems. We will see how this can be applied to the field of communications as synchronized chaotic system can be used to send secret messages. Lastly, we show how resistant this method of encryption is to noise. 
+      This paper introduces an example of a synchronized chaotic system based on the Lorenz system. We will see how this can be applied to the field of communications as synchronized chaotic system can be used to send secret messages. Lastly, we see how resistant this method of encryption is to noise when transmitting the signal. 
     \end{abstract}
 
     \newpage
@@ -47,9 +47,11 @@ sorting=ynt
     \newpage
 
     \section{Introduction}
-      add introduction \cite{cuomo1993}
+      add introduction (do this last) \cite{cuomo1993}
     \section{Theory of Synchronized Chaotic Systems}
       - for only the function that we are working with and show exponential convergence 
+      - give definition for synchronization (from that one paper)
+      - introduces system and where it comes from (from circuit implementation)
       \begin{theorem}
         $E(t) \rightarrow 0$ 
       \end{theorem}
@@ -61,7 +63,8 @@ sorting=ynt
     summary of what we are doing 
     can mention something about precision numbers 
     \subsection{Algorithm Implementation}
-    algorithm and plots of convergence and noise and add pitfalls about machine epsilon 
+    - numerical implementation of the algorithm and plots of convergence and noise and add pitfalls about machine epsilon 
+    - introduce it in the code format and mention particular findings that I found for this (numerical errors that can occur with rounding and what not)
     \subsection{Testing Algorithm Against Noise}
     testing it against Gaussian noise (add some noise and see how bad it can get)
     \section{Discussion}
