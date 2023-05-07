@@ -4,10 +4,24 @@ using WAV
 using Interpolations
 using BenchmarkTools
 using LaTeXStrings
+using Random, Distributions
 
 function convert_message_to_samples(message::String)
   sample, sampling_rate = wavread(message)
   sample = vec(sample)
+  time_arr = Float64.([(1/sampling_rate)*n for n in 1:length(sample)])
+  message_unencrypted = linear_interpolation(time_arr, sample, extrapolation_bc = Line())
+  return message_unencrypted
+end
+
+function convert_message_to_samples_noisy(message::String, s)
+  sample, sampling_rate = wavread(message)
+  sample = vec(sample)
+
+  # add noise 
+  noise = rand(Normal(0.0, s), length(sample))
+  sample += noise 
+
   time_arr = Float64.([(1/sampling_rate)*n for n in 1:length(sample)])
   message_unencrypted = linear_interpolation(time_arr, sample, extrapolation_bc = Line())
   return message_unencrypted
@@ -57,15 +71,40 @@ function decrypt_secret_message(u0, p, tspan, secret_message)
     wavwrite(message, name_of_file, Fs=sampling_rate)
   end 
 
+# Make anything into a function 
+function function_set_up(f)
+  function func(t)
+    val = f(t)
+    return val
+  end
+  return func
+end 
+
+function error_set_up(message_unencrypted, decrypted_message)
+  function abs_error(t)
+  val1 = message_unencrypted(t)
+  val2 = decrypted_message(t)
+  return abs(val1-val2)
+  end 
+  return abs_error
+end
+
 function main()
 u0 = [2.2,1.3,2.0]
 p=[10.0;0.3333333;60.0]
 tspan = (0,4.0) # length of the message is 4 seconds 
 
-### Talker ###
+Random.seed!(42424242)
+
+error_plot = plot()
+
+for s in [0.1, 0.05, 0.01, 0.0]
+  ### Talker ###
 # Create secret message 
 message_unencrypted = convert_message_to_samples("taunt.wav")
-secret_message = create_secret_message(u0, p, tspan, message_unencrypted)
+message_unencrypted_noisy = convert_message_to_samples_noisy("taunt.wav", s)
+
+secret_message = create_secret_message(u0, p, tspan, message_unencrypted_noisy)
 
 # Convert secret message to WAV file 
 sample, sampling_rate = wavread("taunt.wav")
@@ -86,37 +125,21 @@ sample = vec(sample)
 num_of_samples = length(sample)
 
 # Convert secret_message to a wav file 
-convert_samples_to_message(decrypted_message, sampling_rate, num_of_samples, "tauntDecrpyted.wav")
-
-function error_set_up(message_unencrypted, decrypted_message)
-  function abs_error(t)
-  val1 = message_unencrypted(t)
-  val2 = decrypted_message(t)
-  return abs(val1-val2)
-  end 
-  return abs_error
-end
+convert_samples_to_message(decrypted_message, sampling_rate, num_of_samples, "tauntDecrpyted" * string(s) * ".wav")
 
 abs_error = error_set_up(message_unencrypted, decrypted_message)
 
 # Plot error between original sound file and decrypted sound file 
-error_plot = plot(abs_error, tspan..., legend = false, xlabel=L"t", ylabel=L"E(t)")
+# if s == 0.0
+#   error_plot = plot(abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = 0")
+# else 
+#   plot!(abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s))
+# end
 
-# Make anything into a function 
-function function_set_up(f)
-  function func(t)
-    val = f(t)
-    return val
-  end
-  return func
+plot!(error_plot, abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s), palette = :seaborn_colorblind)
 end 
 
-# Plot unencrypted message and encrypted message 
-sound_plot = plot(function_set_up(message_unencrypted),tspan...,label="Original", xlabel=L"t", ylabel="Amplitude")
-plot!(decrypted_message,tspan...,label="Recovered")
-combined_plot = plot(sound_plot, error_plot, dpi = 900)
-
-display(combined_plot)
+display(error_plot)
 # savefig("combined_error_sound_plot.png")
 end
 

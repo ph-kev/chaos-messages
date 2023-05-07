@@ -6,7 +6,7 @@ using BenchmarkTools
 using LaTeXStrings
 
 u0 = [2.2,1.3,2.0]
-p=[10.0;0.3333333;60.0]
+p=[16.0;4.0;45.6]
 tspan = (0,15.0) 
 
 function parameterized_lorenz_transmitter!(du,u,p,t)
@@ -55,4 +55,4 @@ plot!(x_at_time_t_receiver, tspan...,label="Receiver")
 
 combined_plot = plot(x_coord_plot, error_plot, dpi=600)
 display(combined_plot)
-savefig("combined_plot.png")
+# savefig("combined_plot.png")
