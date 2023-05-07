@@ -27,11 +27,14 @@ sorting=ynt
 
 \newfloat{algorithm}{H}{lop} % float the alg environment
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
 
 \title{Sending Secret Messages with Synchronized Chaotic Systems}
 \author{Kevin Phan}
-\date{\today}
+\date{May 12, 2023}
 
 \begin{document}
     \maketitle
@@ -49,26 +52,61 @@ sorting=ynt
     \section{Introduction}
       add introduction (do this last) \cite{cuomo1993}
     \section{Theory of Synchronized Chaotic Systems}
-      - for only the function that we are working with and show exponential convergence 
-      - give definition for synchronization (from that one paper)
-      - introduces system and where it comes from (from circuit implementation)
+      % - for only the function that we are working with and show exponential convergence 
+      % - give definition for synchronization (from that one paper)
+      % - introduces system and where it comes from (from circuit implementation)
+      A synchronized system is when two dynamical systems' trajectories are eventually identical as time $t \rightarrow \infty$. A definition of synchronization is given by He and Vaidya \cite{he_vaidya_1992}. 
+      \begin{definition}
+        Let $\dot{\mathbf{x}} = f(t,\mathbf{x})$ and $\dot{\mathbf{y}} = g(t,\mathbf{y})$ be two dynamical systems, where $t$ is time and $\mathbf{x},\mathbf{y} \in \mathbb{R}^n$. Let $\mathbf{x}(t;t_0,\mathbf{x}_0)$ and $\mathbf{y}(t;t_0,\mathbf{y}_0)$ be solutions to the dynamical systems respectively. We say that the two dynamical systems synchronize if there exists a subset of $\mathbb{R}^n$, denoted $D(t_0)$, such that $\mathbf{x}_0,\mathbf{y}_0 \in D(t_0)$ implies 
+        \begin{equation*} 
+          ||\mathbf{x}(t;t_0,\mathbf{x}_0) - \mathbf{y}(t;t_0,\mathbf{y}_0)|| \rightarrow 0 \ \text{as} \ t \rightarrow +\infty.
+        \end{equation*}
+        If the region of synchronization $D(t_0) = \mathbb{R}^n$, we say that the synchronization is global and otherwise, the synchronization is local. 
+      \end{definition}
+      Note synchronization does not depend on the initial conditions of the dynamical systems. 
+      
+      One example of a synchronized system is given by Cuomo and Oppenheim which was used in the application of communications and how to send secret messages: 
+      \begin{equation}\label{eq:transmitter}
+      \begin{aligned}
+        x_T &= \sigma (y_T-x_T), \\
+        y_T &= r  x_T - y_T - 20 (x_T   z_T),\\
+        z_T &= 5 x_T y_T - b  z_T,
+      \end{aligned}
+    \end{equation} 
+    which is the transmitter's dynamical system and 
+    \begin{equation}\label{eq:receiver}
+      \begin{aligned}
+        x_R &= \sigma (y_R-x_R), \\
+        y_R &= r  x_T - y_R - 20 (x_T   z_R),\\
+        z_R &= 5 x_T y_R - b  z_R,
+      \end{aligned}
+    \end{equation}
+    which is the receiver's dynamical system \cite{cuomo1993}. Notice that the only state variable of the transmitter's dynamical system that appears in the receiver's dynamical system is $x_T$. This means that only information that the receiver need to know to reconstruct the trajectory is data about $x_T$.  
+
+    Cuomo and Oppenhiem demonstrated that the system synchronized using a Lyapunov function to show that the error asymptotically approaches the point $\mathbf{0} \in \mathbb{R}^3$ \cite{cuomo1993}. 
       \begin{theorem}
-        $E(t) \rightarrow 0$ 
+        The pair of dynamical systems given by equations \ref{eq:transmitter} and \ref{eq:receiver} are globally synchronized. 
       \end{theorem}
+      \begin{proof} 
+        add proof here 
+      \end{proof}
+      Furthermore, blah and blah importance about exponential convergence and so 
       \begin{theorem}
-        exponential convergence 
+        exponential convergence (in terms of big O) 
       \end{theorem}
+      give numerical example of synchronization and exponential convergence (copy from presentation essentially)
     \section{Numerical Experiments}
-    based on circuit implementation \cite{cuomo1993}
-    summary of what we are doing 
-    can mention something about precision numbers 
+    % based on circuit implementation \cite{cuomo1993}
+    % summary of what we are doing 
+    % can mention something about precision numbers 
     \subsection{Algorithm Implementation}
-    - numerical implementation of the algorithm and plots of convergence and noise and add pitfalls about machine epsilon 
-    - introduce it in the code format and mention particular findings that I found for this (numerical errors that can occur with rounding and what not)
+    % - numerical implementation of the algorithm and plots of convergence and noise and add pitfalls about machine epsilon 
+    % - introduce it in the code format and mention particular findings that I found for this (numerical errors that can occur with rounding and what not)
     \subsection{Testing Algorithm Against Noise}
-    testing it against Gaussian noise (add some noise and see how bad it can get)
-    \section{Discussion}
-    why it is not that good for sending secret messages but there are better method for doing so (binary messages which is more robust to sending secret messages)
+    % - testing it against Gaussian noise (add some noise and see how bad it can get)
+    % - why it is not that good for sending secret messages but there are better method for doing so (binary messages which is more robust to sending secret messages)
+    \section{Conclusion}
+    % - brief summary and future work 
   \newpage    
     \printbibliography
     \addcontentsline{toc}{section}{References}

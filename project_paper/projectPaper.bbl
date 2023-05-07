@@ -19,6 +19,48 @@
 
 \refsection{0}
   \datalist[entry]{ynt/global//global/global}
+    \entry{he_vaidya_1992}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9ffda79d318226ac0062d59d12f3d5ec}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Rong},
+           giveni={R\bibinitperiod}}}%
+        {{hash=dc04be70919d4d157e7c0adaeac11a84}{%
+           family={Vaidya},
+           familyi={V\bibinitperiod},
+           given={P.\bibnamedelimi G.},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d04ac2ac47deaff1a26dba5a6bb1c30b}
+      \strng{fullhash}{d04ac2ac47deaff1a26dba5a6bb1c30b}
+      \strng{bibnamehash}{d04ac2ac47deaff1a26dba5a6bb1c30b}
+      \strng{authorbibnamehash}{d04ac2ac47deaff1a26dba5a6bb1c30b}
+      \strng{authornamehash}{d04ac2ac47deaff1a26dba5a6bb1c30b}
+      \strng{authorfullhash}{d04ac2ac47deaff1a26dba5a6bb1c30b}
+      \field{labelalpha}{HV92}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1050-2947}
+      \field{journaltitle}{Phys. Rev. A (3)}
+      \field{number}{12}
+      \field{title}{Analysis and synthesis of synchronous periodic and chaotic systems}
+      \field{volume}{46}
+      \field{year}{1992}
+      \field{pages}{7387\bibrangedash 7392}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1103/PhysRevA.46.7387
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1103/PhysRevA.46.7387
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103/PhysRevA.46.7387
+      \endverb
+    \endentry
     \entry{cuomo1993}{article}{}
       \name{author}{2}{}{%
         {{hash=d98c053956c12a1d33d53c0221aea93a}{%

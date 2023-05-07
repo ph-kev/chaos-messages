@@ -59,7 +59,8 @@ function decrypt_secret_message(u0, p, tspan, secret_message)
 
 function main()
 u0 = [2.2,1.3,2.0]
-p=[10.0;0.3333333;60.0]
+# p=[10.0;0.3333333;60.0]
+p = [16.0, 4.0, 45.6]
 tspan = (0,4.0) # length of the message is 4 seconds 
 
 ### Talker ###
@@ -100,7 +101,7 @@ end
 abs_error = error_set_up(message_unencrypted, decrypted_message)
 
 # Plot error between original sound file and decrypted sound file 
-error_plot = plot(abs_error, tspan..., legend = false, xlabel=L"t", ylabel=L"E(t)")
+error_plot = plot(abs_error, tspan..., legend = false, xlabel=L"t", ylabel=L"E(t)", color = "red", linewidth=0.5)
 
 # Make anything into a function 
 function function_set_up(f)
@@ -112,9 +113,9 @@ function function_set_up(f)
 end 
 
 # Plot unencrypted message and encrypted message 
-sound_plot = plot(function_set_up(message_unencrypted),tspan...,label="Original", xlabel=L"t", ylabel="Amplitude")
-plot!(decrypted_message,tspan...,label="Recovered")
-combined_plot = plot(sound_plot, error_plot, dpi = 900)
+sound_plot = plot(function_set_up(message_unencrypted),tspan...,label="Original", xlabel=L"t", ylabel="Amplitude", palette = :seaborn_colorblind, linewidth=0.1)
+plot!(decrypted_message,tspan...,label="Recovered", linewidth=0.5)
+combined_plot = plot(sound_plot, error_plot, dpi = 900, palette = :seaborn_colorblind)
 
 display(combined_plot)
 # savefig("combined_error_sound_plot.png")

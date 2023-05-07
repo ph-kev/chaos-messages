@@ -91,7 +91,8 @@ end
 
 function main()
 u0 = [2.2,1.3,2.0]
-p=[10.0;0.3333333;60.0]
+# p=[10.0;0.3333333;60.0]
+p = [16.0, 4.0, 45.6]
 tspan = (0,4.0) # length of the message is 4 seconds 
 
 Random.seed!(42424242)
@@ -136,7 +137,7 @@ abs_error = error_set_up(message_unencrypted, decrypted_message)
 #   plot!(abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s))
 # end
 
-plot!(error_plot, abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s), palette = :seaborn_colorblind)
+plot!(error_plot, abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s), palette = :seaborn_colorblind, linewidth = 0.5)
 end 
 
 display(error_plot)
