@@ -50,11 +50,12 @@ sorting=ynt
     \newpage
 
     \section{Introduction}
-      add introduction (do this last) \cite{cuomo1993}
+    Chaotic systems are known for their sensitivity to initial conditions. Two trajectories that start close together and diverge from each other. However, unintituvely, a pair of chaotic systems can be synchronized with each other, so that the trajectories are eventually the same in time \cite{pecora}. 
+
+    Cuomo, Oppenheim, and Strogatz studied a pair of dynamical systems based on the Lorenz system and use it to encrypt messages in the field of communications \cite{cuomo1993, expProof, chaoticnoise}. In particular, they shown why the system synchronize and how fast they synchronize, built an algorithm to send secret messages, and how noise can affect the quality of transmission. 
+
+    In this paper, we followed in their footsteps by showing the properties of the synchronized dynamical system and report the same findings that they found. However, a numerical algorithm is implemented rather than using circuits which allow for better reproducibility. 
     \section{Theory of Synchronized Chaotic Systems}
-      % - for only the function that we are working with and show exponential convergence 
-      % - give definition for synchronization (from that one paper)
-      % - introduces system and where it comes from (from circuit implementation)
       A synchronized system is when two dynamical systems' trajectories are eventually identical as time $t \rightarrow \infty$. A definition of synchronization is given by He and Vaidya \cite{he_vaidya_1992}. 
       \begin{definition}
         Let $\dot{\mathbf{x}} = f(t,\mathbf{x})$ and $\dot{\mathbf{y}} = g(t,\mathbf{y})$ be two dynamical systems, where $t$ is time and $\mathbf{x},\mathbf{y} \in \mathbb{R}^n$. Let $\mathbf{x}(t;t_0,\mathbf{x}_0)$ and $\mathbf{y}(t;t_0,\mathbf{y}_0)$ be solutions to the dynamical systems respectively. We say that the two dynamical systems synchronize if there exists a subset of $\mathbb{R}^n$, denoted $D(t_0)$, such that $\mathbf{x}_0,\mathbf{y}_0 \in D(t_0)$ implies 
@@ -221,7 +222,7 @@ sorting=ynt
 
 
     \section{Conclusion}
-    % - brief summary and future work 
+    In this work, we shown that the pair of dynamical systems synchronize and the rate of convergence is exponential. Then, we show how this can be applied in the field of communications to send a secret message. This was done by a numerical algorithm which can suffer from a potential lack of numerical accuracy. This was resolved by enforcing a smaller tolerance on the differential equation solver. We also detail how an audio message can be sent by first converting it into a waveform and doing a linear interpolation to create a function that can be passed on as the message. Lastly, we tested the algorithm against noise and learned that a near-perfect transmission is required to transmit a message that can be heard. Surprisly, the message remains, but it is masked with static noise. 
   \newpage    
     \printbibliography
     \addcontentsline{toc}{section}{References}
