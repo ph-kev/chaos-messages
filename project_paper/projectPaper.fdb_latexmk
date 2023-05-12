@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber projectPaper"] 1683863382 "projectPaper.bcf" "projectPaper.bbl" "projectPaper" 1683868498
-  "projectPaper.bcf" 1683868497 107438 8cad6dc699d196007a47709292fc8403 "pdflatex"
-  "references.bib" 1683863381 2683 a6ba7acdc1165f04f61bac506d3c63ae ""
+["biber projectPaper"] 1683878417 "projectPaper.bcf" "projectPaper.bbl" "projectPaper" 1683878526
+  "projectPaper.bcf" 1683878526 107600 e91a26528938c4fcf8424f43c080a3ba "pdflatex"
+  "references.bib" 1683877870 3070 b9054e50301e5b17717ed9561d7930d9 ""
   (generated)
   "projectPaper.bbl"
   "projectPaper.blg"
-["pdflatex"] 1683868494 "c:/Users/phank/Desktop/Junior Year/Spring Semester/MATH181/Project/chaos-messages/project_paper/projectPaper.tex" "projectPaper.pdf" "projectPaper" 1683868498
+["pdflatex"] 1683878516 "c:/Users/phank/Desktop/Junior Year/Spring Semester/MATH181/Project/chaos-messages/project_paper/projectPaper.tex" "projectPaper.pdf" "projectPaper" 1683878526
   "C:/Users/phank/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677907851 276104 4e65f4195f22ea38b70dc89ba615b5de ""
   "C:/Users/phank/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1645167672 10245400 88ffe1a2d8107494cb498d8cec1d8ba0 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -38,6 +38,7 @@
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
+  "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
@@ -55,6 +56,7 @@
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1247596667 36118 fad905eba93cff5bce1e185fe980a177 ""
+  "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1247596666 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580393758 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -208,13 +210,17 @@
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1636713860 10214 00ce62e730d0cfe22b35e8f1c84949c7 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/phank/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636288472 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "c:/Users/phank/Desktop/Junior Year/Spring Semester/MATH181/Project/chaos-messages/project_paper/projectPaper.tex" 1683868493 10402 6430bbab5afa32d3b0d61d8156c8ce6c ""
-  "projectPaper.aux" 1683868497 2561 4e55366b7b7a1e8d61142e69d248c387 "pdflatex"
-  "projectPaper.bbl" 1683863385 6791 e4d42f6d6db2c5e8c4e7f2781af3386f "biber projectPaper"
-  "projectPaper.out" 1683868497 1087 74cdf09de21dfa0abc2498439122df43 "pdflatex"
-  "projectPaper.run.xml" 1683868497 2367 49afe915bb343bd7a7a5ab60cdd0469d "pdflatex"
-  "projectPaper.tex" 1683868493 10402 6430bbab5afa32d3b0d61d8156c8ce6c ""
-  "projectPaper.toc" 1683868497 544 a8791a6520f4d6e6dea05391c5ddb9f1 "pdflatex"
+  "c:/Users/phank/Desktop/Junior Year/Spring Semester/MATH181/Project/chaos-messages/project_paper/projectPaper.tex" 1683878515 17054 77a6d8d1984feb043c7c32235ebfc0fa ""
+  "figures//combined_error_sound_plot_paper.png" 1683876329 522832 93782f27cc7ba35ccaea51f7d846b781 ""
+  "figures//drawing.png" 1682395395 174192 3a1d49de108982a5e6c6fdf1426ede6b ""
+  "figures//error_plot_noise.png" 1683877679 1038845 5415d3427660e3107fc61edc9e2fbdaf ""
+  "figures/combined_plot.png" 1683868863 305155 fcfcc71c7b0770eb71be4ba8fab0c27d ""
+  "projectPaper.aux" 1683878526 3976 2fc6d05ce45366b9b68a47e9cef43fc0 "pdflatex"
+  "projectPaper.bbl" 1683878421 8692 ec40fe5ce138526bbfc3120887c01d87 "biber projectPaper"
+  "projectPaper.out" 1683878526 1442 20c3be55e6baed5674723df289f004b8 "pdflatex"
+  "projectPaper.run.xml" 1683878526 2367 49afe915bb343bd7a7a5ab60cdd0469d "pdflatex"
+  "projectPaper.tex" 1683878515 17054 77a6d8d1984feb043c7c32235ebfc0fa ""
+  "projectPaper.toc" 1683878526 669 78ebb9f038796c659e70d20ddbca342d "pdflatex"
   (generated)
   "projectPaper.aux"
   "projectPaper.bcf"

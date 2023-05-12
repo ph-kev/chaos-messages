@@ -55,4 +55,4 @@ plot!(x_at_time_t_receiver, tspan...,label="Receiver")
 
 combined_plot = plot(x_coord_plot, error_plot, dpi=600)
 display(combined_plot)
-# savefig("combined_plot.png")
+savefig("combined_plot.png")

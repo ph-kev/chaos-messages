@@ -137,11 +137,11 @@ abs_error = error_set_up(message_unencrypted, decrypted_message)
 #   plot!(abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s))
 # end
 
-plot!(error_plot, abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s), palette = :seaborn_colorblind, linewidth = 0.5)
+plot!(error_plot, abs_error, tspan..., xlabel=L"t", ylabel=L"E(t)", labels = L"\sigma = " * string(s), palette = :seaborn_colorblind, linewidth = 0.5, dpi = 600)
 end 
 
 display(error_plot)
-# savefig("combined_error_sound_plot.png")
+savefig("error_plot_noise.png")
 end
 
 main()

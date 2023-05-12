@@ -118,7 +118,7 @@ plot!(decrypted_message,tspan...,label="Recovered", linewidth=0.5)
 combined_plot = plot(sound_plot, error_plot, dpi = 900, palette = :seaborn_colorblind)
 
 display(combined_plot)
-# savefig("combined_error_sound_plot.png")
+savefig("combined_error_sound_plot_paper.png")
 end
 
 main()

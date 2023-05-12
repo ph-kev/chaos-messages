@@ -2351,9 +2351,12 @@
     <bcf:citekey order="5">expProof</bcf:citekey>
     <bcf:citekey order="6">strogatz2019nonlinear</bcf:citekey>
     <bcf:citekey order="7">cuomo1993</bcf:citekey>
-    <bcf:citekey order="8">he_vaidya_1992</bcf:citekey>
-    <bcf:citekey order="9">expProof</bcf:citekey>
-    <bcf:citekey order="10">strogatz2019nonlinear</bcf:citekey>
+    <bcf:citekey order="8">chaoticnoise</bcf:citekey>
+    <bcf:citekey order="9">cuomo1993</bcf:citekey>
+    <bcf:citekey order="10">he_vaidya_1992</bcf:citekey>
+    <bcf:citekey order="11">expProof</bcf:citekey>
+    <bcf:citekey order="12">strogatz2019nonlinear</bcf:citekey>
+    <bcf:citekey order="13">chaoticnoise</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">

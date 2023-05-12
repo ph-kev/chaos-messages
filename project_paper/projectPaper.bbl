@@ -61,6 +61,54 @@
       \verb https://doi.org/10.1103/PhysRevA.46.7387
       \endverb
     \endentry
+    \entry{chaoticnoise}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ec55d5f47173b549d34403788877bc36}{%
+           family={Cuomo},
+           familyi={C\bibinitperiod},
+           given={K.M.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=91dbf9ff367cd6c6bb21dadfe228fb18}{%
+           family={Oppenheim},
+           familyi={O\bibinitperiod},
+           given={A.V.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fb4e7c12ee0f02b794873a51172b205f}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={S.H.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{fullhash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{bibnamehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{authorbibnamehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{authornamehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{authorfullhash}{d618ced9dd888f402164a084571ffd9b}
+      \field{extraname}{1}
+      \field{labelalpha}{COS93}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Bifurcation and Chaos}
+      \field{number}{06}
+      \field{title}{Robustness and Signal Recovery in a Synchronized Chaotic System}
+      \field{volume}{03}
+      \field{year}{1993}
+      \field{pages}{1629\bibrangedash 1638}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1142/S021812749300129X
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1142/S021812749300129X
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1142/S021812749300129X
+      \endverb
+    \endentry
     \entry{expProof}{article}{}
       \name{author}{3}{}{%
         {{hash=ec55d5f47173b549d34403788877bc36}{%
@@ -85,9 +133,11 @@
       \strng{authorbibnamehash}{d618ced9dd888f402164a084571ffd9b}
       \strng{authornamehash}{d618ced9dd888f402164a084571ffd9b}
       \strng{authorfullhash}{d618ced9dd888f402164a084571ffd9b}
+      \field{extraname}{2}
       \field{labelalpha}{COS93}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extraalpha}{2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Circuits and Systems II: Analog and Digital Signal Processing}
