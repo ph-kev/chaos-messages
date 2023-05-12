@@ -99,7 +99,7 @@ Random.seed!(42424242)
 
 error_plot = plot()
 
-for s in [0.1, 0.05, 0.01, 0.0]
+for s in [2.0, 1.0, 0.5, 0.1]
   ### Talker ###
 # Create secret message 
 message_unencrypted = convert_message_to_samples("taunt.wav")

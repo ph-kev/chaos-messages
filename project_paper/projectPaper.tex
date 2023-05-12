@@ -211,15 +211,15 @@ sorting=ynt
     \end{equation*}
     where $N(0,\sigma^2)$ is Gaussian noise with variance $\sigma^2$. 
 
-    We test it for various standard deviations $\sigma$: $0, 0.1, 0.05, 0.1$ and determine how well the algorithm withstand against noise by plotting the error between the original message and the recovered message. 
+    We test it for various standard deviations $\sigma$: $0, 0.5, 1, 2$ and determine how well the algorithm withstand against noise by plotting the error between the original message and the recovered message. 
     \begin{figure}[H]
         \includegraphics[width=\linewidth]{error_plot_noise.png}
         \centering
         \caption{A plot of the absolute error between the original message and the receovered message for various values of $\sigma$.}
     \end{figure}
+    Recall that the magnitude of a waveform is $1$. As such, we might expect some distortion of the audio for $\sigma = 0.5$ or greater. However, the result was that the original message is remains, but the message is masked by static noise. For greater value of $\sigma$, the static noise eventually drown out the original message as in the case of $\sigma = 2$. This points that the algorithm is largely suspectible to noise and require a near perfect transmission of the encrypted message $\widetilde{m}(t)$ to recover the message $m(t)$. 
 
-    % - testing it against Gaussian noise (add some noise and see how bad it can get)
-    % - why it is not that good for sending secret messages but there are better method for doing so (binary messages which is more robust to sending secret messages)
+
     \section{Conclusion}
     % - brief summary and future work 
   \newpage    
