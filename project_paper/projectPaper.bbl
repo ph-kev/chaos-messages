@@ -146,6 +146,33 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevLett.71.65
       \endverb
     \endentry
+    \entry{strogatz2019nonlinear}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f04e21682cd5a60c53314d930bf5d500}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{f04e21682cd5a60c53314d930bf5d500}
+      \strng{fullhash}{f04e21682cd5a60c53314d930bf5d500}
+      \strng{bibnamehash}{f04e21682cd5a60c53314d930bf5d500}
+      \strng{authorbibnamehash}{f04e21682cd5a60c53314d930bf5d500}
+      \strng{authornamehash}{f04e21682cd5a60c53314d930bf5d500}
+      \strng{authorfullhash}{f04e21682cd5a60c53314d930bf5d500}
+      \field{labelalpha}{Str19}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780367092061}
+      \field{series}{Chapman \& Hall book}
+      \field{title}{Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering}
+      \field{year}{2019}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

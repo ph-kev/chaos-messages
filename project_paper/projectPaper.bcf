@@ -2349,9 +2349,11 @@
     <bcf:citekey order="3">cuomo1993</bcf:citekey>
     <bcf:citekey order="4">cuomo1993</bcf:citekey>
     <bcf:citekey order="5">expProof</bcf:citekey>
-    <bcf:citekey order="6">cuomo1993</bcf:citekey>
-    <bcf:citekey order="7">he_vaidya_1992</bcf:citekey>
-    <bcf:citekey order="8">expProof</bcf:citekey>
+    <bcf:citekey order="6">strogatz2019nonlinear</bcf:citekey>
+    <bcf:citekey order="7">cuomo1993</bcf:citekey>
+    <bcf:citekey order="8">he_vaidya_1992</bcf:citekey>
+    <bcf:citekey order="9">expProof</bcf:citekey>
+    <bcf:citekey order="10">strogatz2019nonlinear</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">

@@ -96,21 +96,62 @@ sorting=ynt
          \dot{e_z} &= 5e_y x_t - be_z,  
         \end{aligned} 
        \end{equation}
-       which describes the error between each coordinate of the trajectories given by transmitter and receiver's dynamical system. Let $\mathbf{e} = (e_x,e_y,e_z)^T$. To show synchronization, it is sufficient to show that for equation \ref{eq:error}, the fixed point $\mathbf{0}$ is asymptotically stable. By inspection, a fixed point of equation \ref{eq:error} is $\mathbf{0}$. 
+       which describes the error between each component of the trajectories given by transmitter and receiver's dynamical system. Let $\mathbf{e} = (e_x,e_y,e_z)^T$. To show synchronization, it is sufficient to show that for equation \ref{eq:error}, the fixed point $\mathbf{0}$ is asymptotically stable. By inspection, a fixed point of equation \ref{eq:error} is $\mathbf{0}$. 
        
        To show that it is asymptotically stable, we will use a Lyapunov function. Let $V(\mathbf{e}) = \frac{1}{2} \left( \frac{1}{\sigma} e_x^2 + e_y^2 + 4e_z^2 \right)$. By inspection, we see that $V(\mathbf{0}) = 0$ and $V(\mathbf{e}) > 0$ for all $\mathbf{e} \neq 0$. Taking the time derivative and substituting for $e_x,e_y,e_z$ using equation \ref{eq:error}, we get 
        \begin{align*} 
          \dot{V} &= \frac{1}{\sigma} e_x \dot{e_x} + e_y \dot{e_y} + 8 \dot{e_z} \\
          &= \frac{1}{\sigma} e_x (\sigma e_y - \sigma e_x) + e_y (-e_y - 20x_T e_z) + 4 e_z (5x_T e_y - be_z) \\ 
-         &= -e_x^2 + e_x e_y - \frac{1}{4} e_y^2 - \frac{3}{4} e_y^2 - 4be_z^2 \\
+         &= -e_x^2 + e_x e_y - e_y^2 - 4be_z^2 \\
          &= - \left( e_x - \frac{1}{2}e_y \right)^2 - \frac{3}{4} e_y^2 - 4be_z^2,
        \end{align*}
        where the last step is completing the square. Thus, for all $\mathbf{e} \neq \mathbf{0}$, $\dot{V} < 0$. As such, $V$ is a Lyapunov function, so all trajectories of $V$ flow toward the fixed point $\mathbf{0}$. This means that the error goes to $0$ which prove that the pair of dynamical systems given by equations \ref{eq:transmitter} and \ref{eq:receiver} are globally synchronized.
       \end{proof}
-      However, the definition of synchronization does not tell us how fast the pair of dynamical systems will synchronize. Fortunately, Cuomo, Oppenheim, and Strogatz (1993) proven that error converge exponentially by studying the error dynamics \cite{expProof}. 
+      However, the definition of synchronization does not tell us how fast the pair of dynamical systems will synchronize. Fortunately, Cuomo, Oppenheim, and Strogatz (1993) proven that error converge exponentially by studying the error dynamics \cite{expProof}.\footnote{This is also given as Exercise 9.1 in Strogatz's Nonlinear Dynamics and Chaos \cite{strogatz2019nonlinear}.} 
       \begin{theorem}
-        The error dynamics of equations \ref{eq:transmitter} and \ref{eq:transmitter} given by equation \ref{eq:error} converge exponentially. In other words, $e_x = e_y = e_z = O(e^t)$. 
+        The error dynamics of equations \ref{eq:transmitter} and \ref{eq:receiver} given by equation \ref{eq:error} converge to $\mathbf{0}$ exponentially. In other words, $e_x, e_y, e_z = O(e^{-t})$. 
       \end{theorem}
+      \begin{proof}
+        Consider the function $V=\frac{1}{2}e_y^2 + 2e_z^2$. We wish to show that $\dot{V} \leq - k V$ where $k=\min\{2,2b\}$. Taking the time derivative and substituting for $e_y,e_z$ using equation \ref{eq:error}, we get
+        \begin{align*}
+          \dot{V} &= e_y \dot{e_y} + 4e_z \dot{e_z} \\ 
+          &= e_y (-e_y - 20e_z x_T) + 4e_z (5e_y x_T - be_z) \\
+          &= - (e_y^2 + 4be_z^2). 
+        \end{align*}
+        We see that $- (e_y^2 + 4be_z^2) \leq -k \left( \frac{1}{2} e_y^2 + 2e_z^2 \right)$ where $k=\min\{2,2b\}$. 
+
+        Next, we establish that $e_2,e_3 = O(e^{-t})$. Integrating $\dot{V} = -kV$ with respect to $t$, we get $V(t) \leq V_0 e^{-kt}$ where $V_0$ is the initial condition of $V$. From this, we establish the inequalities 
+        \begin{equation*}
+          \frac{1}{2}e_y^2 \leq V(t) \leq V_0 e^{-kt}
+        \end{equation*}
+        and 
+        \begin{equation*}
+          2e_z^2 \leq V(t) \leq V_0 e^{-kt}. 
+        \end{equation*}
+        Solving for $e_y$ in the first inequality, we get 
+        \begin{equation*}
+          e_y \leq \sqrt{2V_0} e^{-\frac{kt}{2}}. 
+        \end{equation*}
+        Simiarly, solving for $e_z$ in the second inequality, we get 
+        \begin{equation*} 
+          e_z \leq \sqrt{\frac{V_0}{2}} e^{-\frac{kt}{2}}. 
+        \end{equation*}
+        This show that $e_y,e_z = O(e^{-t})$. 
+        
+        Lastly, we show that $e_1 = O(e^{-t})$. From equation \ref{eq:error}, $\dot{e_x} = \sigma (e_y - e_x)$. This can be rewritten as $\dot{e_1} + \sigma e_1 = \sigma e_2$. Since $e_y \leq \sqrt{2V_0} e^{-\frac{kt}{2}}$, we have 
+        \begin{equation*} 
+          \dot{e_1} + \sigma e_1 \leq \sqrt{2V_0} e^{-\frac{kt}{2}}. 
+        \end{equation*}
+        Multiplying by the integrating factor $e^{\sigma t}$, we get 
+        \begin{equation*} 
+          (e_1 e^{\sigma t})' \leq \sqrt{2V_0} e^{\left( \sigma - \frac{k}{2} \right)t} 
+        \end{equation*}
+        Integrating and solving for $e_1$, we get 
+        \begin{equation*} 
+          e_1 \leq \frac{\sqrt{2V_0}}{\sigma - \frac{k}{2}} e^{-\frac{kt}{2}}
+        \end{equation*}
+        This established that $e_1 = O(e^{-t})$. Therefore, we proved that the error dynamics given by equation \ref{eq:error} converge to $\mathbf{0}$ exponentially. 
+      \end{proof}
       give numerical example of synchronization and exponential convergence (copy from presentation essentially)
     \section{Numerical Experiments}
     % based on circuit implementation \cite{cuomo1993}
