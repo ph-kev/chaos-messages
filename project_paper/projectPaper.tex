@@ -65,34 +65,51 @@ sorting=ynt
       \end{definition}
       Note synchronization does not depend on the initial conditions of the dynamical systems. 
       
-      One example of a synchronized system is given by Cuomo and Oppenheim which was used in the application of communications and how to send secret messages: 
+      One example of a synchronized system is given by Cuomo and Oppenheim (1993) which was used in the application of communications and how to send secret messages: 
       \begin{equation}\label{eq:transmitter}
       \begin{aligned}
-        x_T &= \sigma (y_T-x_T), \\
-        y_T &= r  x_T - y_T - 20 (x_T   z_T),\\
-        z_T &= 5 x_T y_T - b  z_T,
+        \dot{x_T} &= \sigma (y_T-x_T), \\
+        \dot{y_T} &= r  x_T - y_T - 20 (x_T   z_T),\\
+        \dot{z_T} &= 5 x_T y_T - b  z_T,
       \end{aligned}
     \end{equation} 
     which is the transmitter's dynamical system and 
     \begin{equation}\label{eq:receiver}
       \begin{aligned}
-        x_R &= \sigma (y_R-x_R), \\
-        y_R &= r  x_T - y_R - 20 (x_T   z_R),\\
-        z_R &= 5 x_T y_R - b  z_R,
+        \dot{x_R} &= \sigma (y_R-x_R), \\
+        \dot{y_R} &= r  x_T - y_R - 20 (x_T   z_R),\\
+        \dot{z_R} &= 5 x_T y_R - b  z_R,
       \end{aligned}
     \end{equation}
     which is the receiver's dynamical system \cite{cuomo1993}. Notice that the only state variable of the transmitter's dynamical system that appears in the receiver's dynamical system is $x_T$. This means that only information that the receiver need to know to reconstruct the trajectory is data about $x_T$.  
 
-    Cuomo and Oppenhiem demonstrated that the system synchronized using a Lyapunov function to show that the error asymptotically approaches the point $\mathbf{0} \in \mathbb{R}^3$ \cite{cuomo1993}. 
+    Cuomo and Oppenhiem proved that the system will synchronize using a Lyapunov function to show that the error asymptotically approaches the point $\mathbf{0} \in \mathbb{R}^3$ \cite{cuomo1993}. 
       \begin{theorem}
         The pair of dynamical systems given by equations \ref{eq:transmitter} and \ref{eq:receiver} are globally synchronized. 
       \end{theorem}
       \begin{proof} 
-        add proof here 
+       Let $e_x = x_T - y_T$, $e_y = y_T - y_R$, and $e_z = z_T - z_R$. This gives us the dynamical system 
+       \begin{equation}\label{eq:error}
+        \begin{aligned}
+         \dot{e_x} &= \sigma (e_y - e_x), \\ 
+         \dot{e_y} &= -e_y - 20e_z x_T, \\
+         \dot{e_z} &= 5e_y x_t - be_z,  
+        \end{aligned} 
+       \end{equation}
+       which describes the error between each coordinate of the trajectories given by transmitter and receiver's dynamical system. Let $\mathbf{e} = (e_x,e_y,e_z)^T$. To show synchronization, it is sufficient to show that for equation \ref{eq:error}, the fixed point $\mathbf{0}$ is asymptotically stable. By inspection, a fixed point of equation \ref{eq:error} is $\mathbf{0}$. 
+       
+       To show that it is asymptotically stable, we will use a Lyapunov function. Let $V(\mathbf{e}) = \frac{1}{2} \left( \frac{1}{\sigma} e_x^2 + e_y^2 + 4e_z^2 \right)$. By inspection, we see that $V(\mathbf{0}) = 0$ and $V(\mathbf{e}) > 0$ for all $\mathbf{e} \neq 0$. Taking the time derivative and substituting for $e_x,e_y,e_z$ using equation \ref{eq:error}, we get 
+       \begin{align*} 
+         \dot{V} &= \frac{1}{\sigma} e_x \dot{e_x} + e_y \dot{e_y} + 8 \dot{e_z} \\
+         &= \frac{1}{\sigma} e_x (\sigma e_y - \sigma e_x) + e_y (-e_y - 20x_T e_z) + 4 e_z (5x_T e_y - be_z) \\ 
+         &= -e_x^2 + e_x e_y - \frac{1}{4} e_y^2 - \frac{3}{4} e_y^2 - 4be_z^2 \\
+         &= - \left( e_x - \frac{1}{2}e_y \right)^2 - \frac{3}{4} e_y^2 - 4be_z^2,
+       \end{align*}
+       where the last step is completing the square. Thus, for all $\mathbf{e} \neq \mathbf{0}$, $\dot{V} < 0$. As such, $V$ is a Lyapunov function, so all trajectories of $V$ flow toward the fixed point $\mathbf{0}$. This means that the error goes to $0$ which prove that the pair of dynamical systems given by equations \ref{eq:transmitter} and \ref{eq:receiver} are globally synchronized.
       \end{proof}
-      Furthermore, blah and blah importance about exponential convergence and so 
+      However, the definition of synchronization does not tell us how fast the pair of dynamical systems will synchronize. Fortunately, Cuomo, Oppenheim, and Strogatz (1993) proven that error converge exponentially by studying the error dynamics \cite{expProof}. 
       \begin{theorem}
-        exponential convergence (in terms of big O) 
+        The error dynamics of equations \ref{eq:transmitter} and \ref{eq:transmitter} given by equation \ref{eq:error} converge exponentially. In other words, $e_x = e_y = e_z = O(e^t)$. 
       \end{theorem}
       give numerical example of synchronization and exponential convergence (copy from presentation essentially)
     \section{Numerical Experiments}

@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
 \contentsline {section}{\numberline {2}Theory of Synchronized Chaotic Systems}{3}{section.2}%
-\contentsline {section}{\numberline {3}Numerical Experiments}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Algorithm Implementation}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Testing Algorithm Against Noise}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Conclusion}{4}{section.4}%
-\contentsline {section}{References}{5}{section*.2}%
+\contentsline {section}{\numberline {3}Numerical Experiments}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Algorithm Implementation}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Testing Algorithm Against Noise}{5}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Conclusion}{5}{section.4}%
+\contentsline {section}{References}{6}{section*.2}%

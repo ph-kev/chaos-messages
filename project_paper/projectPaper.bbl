@@ -61,6 +61,46 @@
       \verb https://doi.org/10.1103/PhysRevA.46.7387
       \endverb
     \endentry
+    \entry{expProof}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ec55d5f47173b549d34403788877bc36}{%
+           family={Cuomo},
+           familyi={C\bibinitperiod},
+           given={K.M.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=91dbf9ff367cd6c6bb21dadfe228fb18}{%
+           family={Oppenheim},
+           familyi={O\bibinitperiod},
+           given={A.V.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fb4e7c12ee0f02b794873a51172b205f}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={S.H.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{fullhash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{bibnamehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{authorbibnamehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{authornamehash}{d618ced9dd888f402164a084571ffd9b}
+      \strng{authorfullhash}{d618ced9dd888f402164a084571ffd9b}
+      \field{labelalpha}{COS93}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Circuits and Systems II: Analog and Digital Signal Processing}
+      \field{number}{10}
+      \field{title}{Synchronization of Lorenz-based chaotic circuits with applications to communications}
+      \field{volume}{40}
+      \field{year}{1993}
+      \field{pages}{626\bibrangedash 633}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/82.246163
+      \endverb
+    \endentry
     \entry{cuomo1993}{article}{}
       \name{author}{2}{}{%
         {{hash=d98c053956c12a1d33d53c0221aea93a}{%
