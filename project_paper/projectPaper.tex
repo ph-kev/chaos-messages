@@ -40,7 +40,7 @@ sorting=ynt
     \maketitle
 
     \begin{abstract}
-      This paper introduces an example of a synchronized chaotic system based on the Lorenz system. We will see how this can be applied to the field of communications as synchronized chaotic system can be used to send secret messages. Lastly, we see how resistant this method of encryption is to noise when transmitting the signal. 
+      This paper introduces a synchronized chaotic system based on the Lorenz system. We will see how they can be applied to the field of communications as synchronized chaotic system can be used to send secret messages. Lastly, we see how resistant this method of encryption is to noise when transmitting the signal. 
     \end{abstract}
 
     \newpage
@@ -50,23 +50,23 @@ sorting=ynt
     \newpage
 
     \section{Introduction}
-    Chaotic systems are known for their sensitivity to initial conditions. Two trajectories that start close together and diverge from each other. However, unintituvely, a pair of chaotic systems can be synchronized with each other, so that the trajectories are eventually the same in time \cite{pecora}. 
+    Chaotic systems are known for their sensitivity to initial conditions. Two trajectories that start close together can diverge from each other. Despite this, Pecora and Carroll (1990) discovered that a pair of chaotic systems can synchronize with each other, so that the trajectories are eventually the same in time \cite{pecora}. 
 
-    Cuomo, Oppenheim, and Strogatz studied a pair of dynamical systems based on the Lorenz system and use it to encrypt messages in the field of communications \cite{cuomo1993, expProof, chaoticnoise}. In particular, they shown why the system synchronize and how fast they synchronize, built an algorithm to send secret messages, and how noise can affect the quality of transmission. 
+    Cuomo, Oppenheim, and Strogatz studied a pair of dynamical systems based on the Lorenz system and use it to encrypt messages in the field of communications \cite{cuomo1993, expProof, chaoticnoise}. In particular, they have shown that the pair of dynamical systems do synchronize and synchronization is exponential, built an algorithm to send secret messages, and how noise can affect the quality of transmission. 
 
     In this paper, we followed in their footsteps by showing the properties of the synchronized dynamical system and report the same findings that they found. However, a numerical algorithm is implemented rather than using circuits which allow for better reproducibility. 
     \section{Theory of Synchronized Chaotic Systems}
-      A synchronized system is when two dynamical systems' trajectories are eventually identical as time $t \rightarrow \infty$. A definition of synchronization is given by He and Vaidya \cite{he_vaidya_1992}. 
+      Two dynamical systems are synchronized when the two dynamical systems' trajectories are eventually identical as time $t \rightarrow \infty$. A definition of synchronization is given by He and Vaidya \cite{he_vaidya_1992}. 
       \begin{definition}
         Let $\dot{\mathbf{x}} = f(t,\mathbf{x})$ and $\dot{\mathbf{y}} = g(t,\mathbf{y})$ be two dynamical systems, where $t$ is time and $\mathbf{x},\mathbf{y} \in \mathbb{R}^n$. Let $\mathbf{x}(t;t_0,\mathbf{x}_0)$ and $\mathbf{y}(t;t_0,\mathbf{y}_0)$ be solutions to the dynamical systems respectively. We say that the two dynamical systems synchronize if there exists a subset of $\mathbb{R}^n$, denoted $D(t_0)$, such that $\mathbf{x}_0,\mathbf{y}_0 \in D(t_0)$ implies 
         \begin{equation*} 
           ||\mathbf{x}(t;t_0,\mathbf{x}_0) - \mathbf{y}(t;t_0,\mathbf{y}_0)|| \rightarrow 0 \ \text{as} \ t \rightarrow +\infty.
         \end{equation*}
-        If the region of synchronization $D(t_0) = \mathbb{R}^n$, we say that the synchronization is global and otherwise, the synchronization is local. 
+        If the region of synchronization $D(t_0) = \mathbb{R}^n$, we say that the synchronization is global. Otherwise, the synchronization is local. 
       \end{definition}
       Note synchronization does not depend on the initial conditions of the dynamical systems. 
       
-      One example of a synchronized system is given by Cuomo and Oppenheim (1993) which was used in the application of communications and how to send secret messages: 
+      One example of a synchronized system is given by Cuomo and Oppenheim which was used to send secret messages: 
       \begin{equation}\label{eq:transmitter}
       \begin{aligned}
         \dot{x_T} &= \sigma (y_T-x_T), \\
@@ -82,9 +82,9 @@ sorting=ynt
         \dot{z_R} &= 5 x_T y_R - b  z_R,
       \end{aligned}
     \end{equation}
-    which is the receiver's dynamical system \cite{cuomo1993}. Notice that the only state variable of the transmitter's dynamical system that appears in the receiver's dynamical system is $x_T$. This means that only information that the receiver need to know to reconstruct the trajectory is data about $x_T$. Furthermore, this pair of dynamical system is the same as the Lorenz system after doing a change of variables. Hence, this pair of chaotic system is also chaotic. 
+    which is the receiver's dynamical system \cite{cuomo1993}. Notice that the only state variable of the transmitter's dynamical system that appears in the receiver's dynamical system is $x_T$. This means that only information that the receiver need to know to reconstruct the trajectory of the transmitter's dynamical system is data about $x_T$. Furthermore, this pair of dynamical system is the same as the Lorenz system after doing a change of variables. Hence, this pair of chaotic system is also chaotic. 
 
-    Cuomo and Oppenhiem proved that the system will synchronize using a Lyapunov function to show that the error asymptotically approaches the point $\mathbf{0} \in \mathbb{R}^3$ \cite{cuomo1993}. 
+    Cuomo and Oppenheim proved that the synchronization occurs using a Lyapunov function to show that the error asymptotically approaches the point $\mathbf{0} \in \mathbb{R}^3$ \cite{cuomo1993}. 
       \begin{theorem}\label{thm:synchronize}
         The pair of dynamical systems given by equations \ref{eq:transmitter} and \ref{eq:receiver} are globally synchronized. 
       \end{theorem}
@@ -97,9 +97,11 @@ sorting=ynt
          \dot{e_z} &= 5e_y x_t - be_z,  
         \end{aligned} 
        \end{equation}
-       which describes the error between each component of the trajectories given by transmitter and receiver's dynamical system. Let $\mathbf{e} = (e_x,e_y,e_z)^T$. To show synchronization, it is sufficient to show that for equation \ref{eq:error}, the fixed point $\mathbf{0}$ is asymptotically stable. By inspection, a fixed point of equation \ref{eq:error} is $\mathbf{0}$. 
+       which describes the error between each component of the trajectories given by transmitter and receiver's dynamical system. Let $\mathbf{e} = (e_x,e_y,e_z)^T$. To show synchronization, it is sufficient to show that for equation \ref{eq:error}, the fixed point $\mathbf{0}$ is asymptotically stable. By inspection, $\mathbf{0}$ is a fixed point of equation \ref{eq:error} and $V(\mathbf{e}) > 0$ for all $\mathbf{e} \neq 0$. 
        
-       To show that it is asymptotically stable, we will use a Lyapunov function. Let $V(\mathbf{e}) = \frac{1}{2} \left( \frac{1}{\sigma} e_x^2 + e_y^2 + 4e_z^2 \right)$. By inspection, we see that $V(\mathbf{0}) = 0$ and $V(\mathbf{e}) > 0$ for all $\mathbf{e} \neq 0$. Taking the time derivative and substituting for $e_x,e_y,e_z$ using equation \ref{eq:error}, we get 
+       To show that it is asymptotically stable, we use a Lyapunov function. Let $V(\mathbf{e}) = \frac{1}{2} \left( \frac{1}{\sigma} e_x^2 + e_y^2 + 4e_z^2 \right)$. By inspection, we see that $V(\mathbf{0}) = 0$ and $V(\mathbf{e}) > 0$ for all $\mathbf{e} \neq 0$. 
+       
+       Taking the time derivative of $V$ and substituting for $e_x,e_y,e_z$ using equation \ref{eq:error}, we get 
        \begin{align*} 
          \dot{V} &= \frac{1}{\sigma} e_x \dot{e_x} + e_y \dot{e_y} + 8 \dot{e_z} \\
          &= \frac{1}{\sigma} e_x (\sigma e_y - \sigma e_x) + e_y (-e_y - 20x_T e_z) + 4 e_z (5x_T e_y - be_z) \\ 
@@ -108,18 +110,18 @@ sorting=ynt
        \end{align*}
        where the last step is completing the square. Thus, for all $\mathbf{e} \neq \mathbf{0}$, $\dot{V} < 0$. As such, $V$ is a Lyapunov function, so all trajectories of $V$ flow toward the fixed point $\mathbf{0}$. This means that the error goes to $0$ which prove that the pair of dynamical systems given by equations \ref{eq:transmitter} and \ref{eq:receiver} are globally synchronized.
       \end{proof}
-      However, the definition of synchronization does not tell us how fast the pair of dynamical systems will synchronize. Fortunately, Cuomo, Oppenheim, and Strogatz (1993) proven that error converge exponentially by studying the error dynamics \cite{expProof}.\footnote{This is also given as Exercise 9.1 in Strogatz's Nonlinear Dynamics and Chaos \cite{strogatz2019nonlinear}.} 
+      However, the definition of synchronization does not tell us how fast the pair of dynamical systems will synchronize. Fortunately, Cuomo, Oppenheim, and Strogatz (1993) proved that error converge exponentially by studying the error dynamics \cite{expProof}.\footnote{This is also given as Exercise 9.1 in Strogatz's Nonlinear Dynamics and Chaos \cite{strogatz2019nonlinear}.} 
       \begin{theorem}\label{thm:error}
-        The error dynamics of equations \ref{eq:transmitter} and \ref{eq:receiver} given by equation \ref{eq:error} converge to $\mathbf{0}$ exponentially. In other words, $e_x, e_y, e_z = O(e^{-t})$. 
+        The error dynamics of equations \ref{eq:transmitter} and \ref{eq:receiver} given by equation \ref{eq:error} converge to $\mathbf{0}$ exponentially.
       \end{theorem}
       \begin{proof}
-        Consider the function $V=\frac{1}{2}e_y^2 + 2e_z^2$. We wish to show that $\dot{V} \leq - k V$ where $k=\min\{2,2b\}$. Taking the time derivative and substituting for $e_y,e_z$ using equation \ref{eq:error}, we get
+        Consider the function $V(e_y,e_z)=\frac{1}{2}e_y^2 + 2e_z^2$. We wish to show that $\dot{V} \leq - k V$ where $k<\min\{2,2b\}$. Taking the time derivative and substituting for $e_y,e_z$ using equation \ref{eq:error}, we get
         \begin{align*}
           \dot{V} &= e_y \dot{e_y} + 4e_z \dot{e_z} \\ 
           &= e_y (-e_y - 20e_z x_T) + 4e_z (5e_y x_T - be_z) \\
           &= - (e_y^2 + 4be_z^2). 
         \end{align*}
-        We see that $- (e_y^2 + 4be_z^2) \leq -k \left( \frac{1}{2} e_y^2 + 2e_z^2 \right)$ where $k=\min\{2,2b\}$. 
+        We see that $- (e_y^2 + 4be_z^2) \leq -k \left( \frac{1}{2} e_y^2 + 2e_z^2 \right)$ where $k<\min\{2,2b\}$. 
 
         Next, we establish that $e_2,e_3 = O(e^{-t})$. Integrating $\dot{V} = -kV$ with respect to $t$, we get $V(t) \leq V_0 e^{-kt}$ where $V_0$ is the initial condition of $V$. From this, we establish the inequalities 
         \begin{equation*}
@@ -137,7 +139,7 @@ sorting=ynt
         \begin{equation*} 
           e_z \leq \sqrt{\frac{V_0}{2}} e^{-\frac{kt}{2}}. 
         \end{equation*}
-        This show that $e_y,e_z = O(e^{-t})$. 
+        This show that $e_y,e_z = O(e^{-\frac{kt}{2}})$. 
         
         Lastly, we show that $e_1 = O(e^{-t})$. From equation \ref{eq:error}, $\dot{e_x} = \sigma (e_y - e_x)$. This can be rewritten as $\dot{e_1} + \sigma e_1 = \sigma e_2$. Since $e_y \leq \sqrt{2V_0} e^{-\frac{kt}{2}}$, we have 
         \begin{equation*} 
@@ -151,9 +153,9 @@ sorting=ynt
         \begin{equation*} 
           e_1 \leq \frac{\sqrt{2V_0}}{\sigma - \frac{k}{2}} e^{-\frac{kt}{2}}
         \end{equation*}
-        This established that $e_1 = O(e^{-t})$. Therefore, we proved that the error dynamics given by equation \ref{eq:error} converge to $\mathbf{0}$ exponentially. 
+        This established that $e_1 = O(e^{-\frac{kt}{2}})$. Therefore, we proved that the error dynamics given by equation \ref{eq:error} converge to $\mathbf{0}$ exponentially. 
       \end{proof}
-      Furthermore, we give a numerical example of synchronization and the error going to zero for the $x$-component of the dynamical system given by equations \ref{eq:transmitter} and \ref{eq:receiver} with parameters $\sigma = 16$, $r=45.6$, and $b = 4$. The initial conditions of the transmitter's dynamical system and receiver's dynamical system is $(2.2, 1.3, 2.0)$ and $(10.2, 7.3, 6.0)$ respectively. 
+      Furthermore, we give a numerical example of synchronization and the error going to zero for the $x$-component of the dynamical system given by equations \ref{eq:transmitter} and \ref{eq:receiver} with parameters $\sigma = 16$, $r=45.6$, and $b = 4$. The initial conditions of the transmitter's dynamical system and receiver's dynamical system is $(2.2, 1.3, 2.0)$ and $(10.2, 7.3, 6.0)$ respectively. From the plot, the dynamical systems synchronize at $t \approx 2$ and the error goes to $0$ and remains at $0$ for $t > 2$. 
       \begin{figure}[H]
           \includegraphics[width=\linewidth]{figures/combined_plot.png}
           \centering
@@ -164,20 +166,20 @@ sorting=ynt
     \begin{figure}[H]
         \includegraphics[width=8cm]{drawing.png}
         \centering
-        \caption{The transmitter want to send a secret message $m(t)$ to the receiver and want no one else to be able to read it.}
+        \caption{The transmitter want to send a message $m(t)$ to the receiver and want no one else to be able to read it.}
     \end{figure}
-    Consider two people: Transmitter and Receiver. Transmitter want to send a secret message $m(t)$ to Receiver. Cuomo and Oppenheim show that one way of solving this dilemma is by using synchronized chaotic system \cite{cuomo1993}. The core idea is to send the message $m(t)$ in the trajectory of the transmitter's dynamica system, use the receiver's dynamical system to reproduce the actual trajectory of the transmitter's dynamical system, and use this to directly compute $m(t)$. In their paper, they create a circuit implementation that capture the same behavior as the pair of dynamical systems. Compared to their paper, we will use the same algorithm by Cuomo and Oppenheim, but implement the algorithm numerically. 
+    Consider two people: Transmitter and Receiver. Transmitter want to send a message $m(t)$ to Receiver. However, the message should not be able to be read by anyone, but the Receiver. Cuomo and Oppenheim show that one way of approaching this problem is by using synchronized chaotic system \cite{cuomo1993}. The core idea is to send the sum of the message $m(t)$ and the trajectory of the transmitter's dynamical system, use the receiver's dynamical system to reproduce the actual trajectory of the transmitter's dynamical system, and use this to directly compute $m(t)$. In their paper, they create a circuit implementation that capture the same behavior as the pair of dynamical systems in equations \ref{eq:transmitter} and \ref{eq:receiver}. Compared to their paper, we will use the same algorithm by Cuomo and Oppenheim, but implement the algorithm numerically. 
     \subsection{Algorithm Implementation}
     Let $m(t)$ be the message the transmitter want to send to the receiver. The numerical algorithm is given below. 
     \begin{enumerate}
-      \item Create encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where $||m(t)|| \ll ||x_T(t)||$. 
+      \item Create the encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where $||m(t)|| \ll ||x_T(t)||$. 
         \item Send the encrypted message $\widetilde{m}(t)$ to the receiver. 
         \item Use the receiver's dynamical system to hopefully reproduce $x_R(t) \approx x_T(t)$. 
         \item Compute $\widetilde{m}(t) - x_R(t) \approx x_T (t) + m(t) - x_T(t) = m(t)$. 
     \end{enumerate}
-    The first step is to create an encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where the magnitude of $m(t)$ is much smaller than the magnitude of $x_T(t)$. This encrypt the message $m(t)$ because $x_T(t)$ serve as noise to hide the message $m(t)$. Note that $m(t)$ can be made as small as we like by multiplying by $\varepsilon > 0$. The receiver can multiply by $\frac{1}{\varepsilon}$ to get $m(t)$ back when the receiver recover the scaled version of $m(t)$.  
+    The first step is to create an encrypted message $\widetilde{m}(t) = x_T (t) + m(t)$ where the magnitude of $m(t)$ is much smaller than the magnitude of $x_T(t)$. This encrypts the message $m(t)$ because $x_T(t)$ serve as a mask to hide the message $m(t)$. Note that $m(t)$ can be made as small as we like by multiplying by $0 < \varepsilon < 1$. The receiver can multiply by $\frac{1}{\varepsilon}$ to get $m(t)$ back when the receiver recovers the scaled version of $m(t)$.  
 
-    The second step is to send the encrypted message $\widetilde{m}(t)$ to the receiver and the third step is to use $\widetilde{m}(t)$ to reproduce $x_T(t)$ before the trajectory got corrupted by noise. Note that in this case, $m(t)$ is noise as the receiver's dynamical system try to synchronize with $\widetilde{m}(t)$ which is corrupted by noise. The receiver's dynamical system is 
+    The second step is to send the encrypted message $\widetilde{m}(t)$ to the receiver and the third step is to use $\widetilde{m}(t)$ to reproduce $x_T(t)$. Note that in this case, $m(t)$ is noise as the receiver's dynamical system try to synchronize with $\widetilde{m}(t)$. The receiver's dynamical system is 
     \begin{equation*} 
       \begin{aligned}
         \dot{x_R} &= \sigma (y_R-x_R), \\
@@ -187,24 +189,21 @@ sorting=ynt
     \end{equation*}
     where $x_R$ is replaced by $\widetilde{m}$ except for the equation for $\dot{x_R}$. Also, notice that the receiver's dynamical system will not perfectly recover $x_T(t)$ because of the noise $m(t)$. 
 
-    The last step is to compute the message $m(t)$ which is what the transmitter want to send. In step $3$, the receiver's dynamical systems hopefully reproduce $x_R(t) \approx x_T(t)$. Thus, $\widetilde{m}(t) - x_R(t) = (x_T(t) + m(t)) - x_T(t) = m(t)$. 
+    The last step is to compute the message $m(t)$ which is what the transmitter want to send. In step $3$, the receiver's dynamical systems hopefully reproduce $x_R(t) \approx x_T(t)$. Thus, $\widetilde{m}(t) - x_R(t) \approx (x_T(t) + m(t)) - x_T(t) = m(t)$. 
 
-    In contrast to a circuit implementation of the algorithm, one concern is numerical errors. The tolerance of the differential equation solver should be set to sufficiently low values such that the digits representing $m(t)$ are not truncated or rounded in the solution. For this reason, we set the relative and absolute tolerance to $10^{-11}$. 
-
-    % - numerical implementation of the algorithm and plots of convergence and noise and add pitfalls about machine epsilon 
-    % - introduce it in the code format and mention particular findings that I found for this (numerical errors that can occur with rounding and what not)
+    In contrast to a circuit implementation of the algorithm, one concern is numerical errors. The tolerance of the differential equation solver should be set to sufficiently low values such that the digits representing $m(t)$ are not truncated or rounded when finding the solution to both dynamical systems. For this reason, we set the relative and absolute tolerance to $10^{-11}$. 
     \subsection{Transmitting a Message}
     In order to transmit a message, we can convert an audio file to a waveform. For instance, the \verb|wav| library and \verb|Wav.jl| package are both capable of reading audio files and writing them into waveforms in Python and Julia respectively. Then, a linear interpolation can be done on the signal to create the message $m(t)$. After transmitting them to the receiver, the receiver can convert the waveforms into audio files to listen to them. 
     
-    We use the transformation above to transmit the audio file \verb|taunt.wav|.\footnote{The audio file came from an introductory programming class taught at UIUC: \url{https://www2.cs.uic.edu/~i101/SoundFiles/}.} The parameters are the same as before which are $\sigma = 16$, $r=45.6$, and $b = 4$ and the intial conditions are the same for both systems which is $(2.2, 1.3, 2.0)$. The plot of the waveforms and error between the two waveforms are shown below. 
+    We use the transformation above to transmit the audio file \verb|taunt.wav|.\footnote{The audio file came from an introductory programming class taught at UIUC: \url{https://www2.cs.uic.edu/~i101/SoundFiles/}.} The parameters are the same as before which are $\sigma = 16$, $r=45.6$, and $b = 4$ and the initial conditions are the same for both systems which is $(2.2, 1.3, 2.0)$. The plot of the waveforms and error between the two waveforms are shown below. 
     \begin{figure}[H]
         \includegraphics[width=\linewidth]{combined_error_sound_plot_paper.png}
         \centering
         \caption{Plot of both waveforms and the absolute error between the two waveforms.}
     \end{figure}
-    Notice that the error is not completely zero due to the ``noise'' that is added due to $m(t)$. Despite this, the audio file produced from this is listenable and one can hear the message that is being sent. 
+    Notice that the error is not completely zero due to the ``noise'' that is $m(t)$. Despite this, the audio file produced from this is listenable and one can hear the message that is being sent. 
     \subsection{Testing Algorithm Against Noise}
-    In non-idealized situations, there will always be noise that is transmitted along with the signal that we want to send. Similar to Cuomo, Oppenheim, and Strogatz, we also explore how Gaussian noise affect the quality of the recovered message \cite{chaoticnoise}. 
+    In non-idealized situations, there will always be noise that is transmitted along with the signal that we want to send. Cuomo, Oppenheim, and Strogatz (1993) studied how robust the algorithm is to recovering the message in the presence of noise and why speech can still be recovered in presence of noise \cite{chaoticnoise}. Similar to Cuomo, Oppenheim, and Strogatz, we explore how Gaussian noise affect the quality of the recovered message in the context of the numerical algorithm. 
 
     Instead of sending the message $\tilde{m}(t) = x_T (t) + m(t)$, we send the message 
     \begin{equation*} 
@@ -216,13 +215,13 @@ sorting=ynt
     \begin{figure}[H]
         \includegraphics[width=\linewidth]{error_plot_noise.png}
         \centering
-        \caption{A plot of the absolute error between the original message and the receovered message for various values of $\sigma$.}
+        \caption{A plot of the absolute error between the original message and the recovered message for various values of $\sigma$.}
     \end{figure}
-    Recall that the magnitude of a waveform is $1$. As such, we might expect some distortion of the audio for $\sigma = 0.5$ or greater. However, the result was that the original message is remains, but the message is masked by static noise. For greater value of $\sigma$, the static noise eventually drown out the original message as in the case of $\sigma = 2$. This points that the algorithm is largely suspectible to noise and require a near perfect transmission of the encrypted message $\widetilde{m}(t)$ to recover the message $m(t)$. 
+    Recall that the magnitude of a waveform is $1$. As such, we might expect some distortion of the audio for $\sigma = 0.5$ or greater. However, the result was that the original message remains in the audio file, but the message is masked by static noise. As $\sigma$ increases, the volume of the static noise increase which eventually drown out the original message as in the case of $\sigma = 2$. This points that the algorithm is susceptible to noise and require a near perfect transmission of the encrypted message $\widetilde{m}(t)$ to recover the message $m(t)$. 
 
 
     \section{Conclusion}
-    In this work, we shown that the pair of dynamical systems synchronize and the rate of convergence is exponential. Then, we show how this can be applied in the field of communications to send a secret message. This was done by a numerical algorithm which can suffer from a potential lack of numerical accuracy. This was resolved by enforcing a smaller tolerance on the differential equation solver. We also detail how an audio message can be sent by first converting it into a waveform and doing a linear interpolation to create a function that can be passed on as the message. Lastly, we tested the algorithm against noise and learned that a near-perfect transmission is required to transmit a message that can be heard. Surprisly, the message remains, but it is masked with static noise. 
+    In this work, we showed that the pair of dynamical systems synchronize and the rate of convergence is exponential. Then, we show how this can be applied in the field of communications to send a secret message. This was done by a numerical algorithm which can suffer from a potential lack of numerical accuracy. This was resolved by enforcing a smaller tolerance when finding the solution to the dynamical system. We also detail how an audio message can be sent by first converting it into a waveform and doing a linear interpolation to create a function that can be passed on as the message. Lastly, we tested the algorithm against noise and learned that a near-perfect transmission is required to transmit a message that can be heard. Surprisingly, the message remains, but the audio file is corrupted by static noise. 
   \newpage    
     \printbibliography
     \addcontentsline{toc}{section}{References}
