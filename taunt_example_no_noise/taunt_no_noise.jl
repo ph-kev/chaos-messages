@@ -5,12 +5,11 @@ using Interpolations
 using BenchmarkTools
 using LaTeXStrings
 
-include("../sending_secrets_chaos_new.jl")
+include("../sending_secrets_chaos.jl")
 
 function main()
-  u0 = [2.2,1.3,2.0]
-  # p=[10.0;0.3333333;60.0]
-  p = [16.0, 4.0, 45.6]
+  u0 = [2.2,1.3,2.0] # initial condition
+  p = [16.0, 4.0, 45.6] # parameters of the dynamical system 
   tspan = (0,4.0) # length of the message is 4 seconds 
 
   ### Talker ###
@@ -39,21 +38,12 @@ function main()
   # Convert secret_message to a wav file 
   convert_samples_to_message(decrypted_message, sampling_rate, num_of_samples, "tauntDecrpyted.wav")
 
-  function error_set_up(message_unencrypted, decrypted_message)
-    function abs_error(t)
-    val1 = message_unencrypted(t)
-    val2 = decrypted_message(t)
-    return abs(val1-val2)
-    end 
-    return abs_error
-  end
-
   abs_error = error_set_up(message_unencrypted, decrypted_message)
 
   # Plot error between original sound file and decrypted sound file 
   error_plot = plot(abs_error, tspan..., legend = false, xlabel=L"t", ylabel=L"E(t)", color = "red", linewidth=0.5)
 
-  # Make anything into a function 
+  # Helper function to make anything into a function 
   function function_set_up(f)
     function func(t)
       val = f(t)
